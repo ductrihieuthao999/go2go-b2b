@@ -60,20 +60,20 @@ export function HeroSection() {
         <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-                <span className="size-1.5 rounded-full bg-green-500" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+                <span className="size-1.5 rounded-full bg-green-400" />
                 Trusted by 200+ businesses nationwide
               </div>
-              <h1 className="mt-6 max-w-2xl text-balance text-5xl font-bold md:text-6xl lg:mt-8 xl:text-7xl">
+              <h1 className="mt-6 max-w-2xl text-balance text-5xl font-bold text-white md:text-6xl lg:mt-8 xl:text-7xl">
                 B2B Supply Solutions You Can Count On
               </h1>
-              <p className="mt-6 max-w-xl text-balance text-lg text-muted-foreground">
+              <p className="mt-6 max-w-xl text-balance text-lg text-white/80">
                 Streamline your procurement with go2go — fast quotes, reliable delivery, and
                 500+ quality products your business needs to grow.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-                <Button asChild size="lg" className="h-12 rounded-full pl-5 pr-3 text-base">
+                <Button asChild size="lg" className="h-12 rounded-full pl-5 pr-3 text-base bg-white text-primary hover:bg-white/90">
                   <Link href="/catalog">
                     <span className="text-nowrap">Browse Products</span>
                     <ChevronRight className="ml-1" />
@@ -83,7 +83,7 @@ export function HeroSection() {
                   asChild
                   size="lg"
                   variant="ghost"
-                  className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
+                  className="h-12 rounded-full px-5 text-base text-white border border-white/30 hover:bg-white/10">
                   <Link href="/quotation">
                     <span className="text-nowrap">Request a Quote</span>
                   </Link>
@@ -93,22 +93,17 @@ export function HeroSection() {
           </div>
 
           {/* Hero video / visual */}
-          <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl border border-black/10 sm:aspect-video lg:rounded-[3rem] dark:border-white/5">
-            {/*
-              VIDEO SETUP:
-              Resolution: 1920×1080 (Full HD) at 16:9 ratio — compress to H.264 MP4, target < 5 MB.
-              Option A — Local file: Place your video at /public/videos/hero.mp4 and change src to "/videos/hero.mp4"
-              Option B — CDN: Upload to ImageKit, Cloudflare Stream, or Bunny.net and paste the URL below.
-            */}
+          <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl sm:aspect-video lg:rounded-[3rem]">
             <video
               autoPlay
               loop
               muted
               playsInline
-              className="size-full object-cover opacity-40 dark:opacity-30"
+              className="size-full object-cover"
               src="/videos/hero.mp4"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           </div>
         </div>
       </section>
