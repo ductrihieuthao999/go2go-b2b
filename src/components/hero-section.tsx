@@ -106,7 +106,7 @@ export function HeroSection() {
               muted
               playsInline
               className="size-full object-cover opacity-40 dark:opacity-30"
-              src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477"
+              src="/videos/hero.mp4"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           </div>
