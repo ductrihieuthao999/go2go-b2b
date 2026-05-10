@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,6 +10,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 })
   }
 
+  const { createClient } = await import('@supabase/supabase-js')
   const supabase = createClient(url, key)
   const body = await request.json()
 
