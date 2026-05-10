@@ -9,9 +9,9 @@ import { Menu, X } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
 
 const menuItems = [
-  { name: 'Products', href: '/catalog' },
+  { name: 'Collections', href: '/catalog' },
   { name: 'Projects', href: '/projects' },
-  { name: 'Solutions', href: '/#solutions' },
+  { name: 'Custom Orders', href: '/quotation' },
   { name: 'About', href: '/#about' },
 ]
 
@@ -40,7 +40,7 @@ export function NavHeader() {
         <div
           className={cn(
             'mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12',
-            scrolled && 'bg-background/80 backdrop-blur-2xl shadow-sm border border-border/40'
+            scrolled && 'bg-background/90 backdrop-blur-2xl shadow-sm border border-border/40'
           )}>
           <motion.div
             className={cn(
@@ -67,12 +67,12 @@ export function NavHeader() {
                       <Link
                         href={item.href}
                         className={cn(
-                          'block duration-150 hover:text-foreground',
+                          'block duration-150 hover:text-foreground font-medium tracking-wide',
                           pathname === item.href
-                            ? 'text-foreground font-medium'
+                            ? 'text-foreground'
                             : 'text-muted-foreground'
                         )}>
-                        <span>{item.name}</span>
+                        {item.name}
                       </Link>
                     </li>
                   ))}
@@ -87,8 +87,8 @@ export function NavHeader() {
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-foreground block duration-150">
-                        <span>{item.name}</span>
+                        className="text-muted-foreground hover:text-foreground block duration-150 font-medium">
+                        {item.name}
                       </Link>
                     </li>
                   ))}
@@ -96,14 +96,10 @@ export function NavHeader() {
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild variant="outline" size="sm">
-                  <Link href="/catalog">
-                    <span>Browse Products</span>
-                  </Link>
+                  <Link href="/catalog">View Collections</Link>
                 </Button>
                 <Button asChild size="sm">
-                  <Link href="/quotation">
-                    <span>Get a Quote</span>
-                  </Link>
+                  <Link href="/quotation">Request Quote</Link>
                 </Button>
               </div>
             </div>
@@ -116,12 +112,14 @@ export function NavHeader() {
 
 export function Go2GoLogo({ className }: { className?: string }) {
   return (
-    <span className={cn('flex items-center gap-0.5 text-xl font-bold tracking-tight', className)}>
-      <span className="text-foreground">go</span>
-      <span className="rounded bg-primary px-1 text-sm text-primary-foreground font-black">2</span>
-      <span className="text-foreground">go</span>
-      <span className="ml-2 hidden text-[10px] font-semibold uppercase tracking-widest text-muted-foreground border border-border rounded px-1 py-0.5 sm:block">
-        B2B
+    <span className={cn('flex items-center gap-1 tracking-tight', className)}>
+      <span
+        style={{ fontFamily: 'var(--font-playfair), serif' }}
+        className="text-xl font-bold italic text-foreground">
+        go2go
+      </span>
+      <span className="hidden text-[9px] font-semibold uppercase tracking-[0.2em] text-muted-foreground border-l border-border pl-2 ml-1 sm:block">
+        Woodcraft
       </span>
     </span>
   )

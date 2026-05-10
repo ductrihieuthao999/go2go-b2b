@@ -2,17 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ChevronRight, TrendingDown, Clock, ShieldCheck, Package } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 interface Project {
   id: string
   client: string
   industry: string
   title: string
-  challenge: string
-  solution: string
+  scope: string
+  approach: string
   results: { label: string; value: string }[]
-  icon: React.ElementType
   color: string
   accent: string
 }
@@ -20,111 +19,93 @@ interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    client: 'MegaFab Industries',
-    industry: 'Manufacturing',
-    title: 'Centralized Procurement for 3 Production Plants',
-    challenge:
-      'Managing consumables across 3 facilities led to duplicate orders, stockouts, and 18% cost overruns each quarter.',
-    solution:
-      'go2go implemented a centralized ordering portal, standardized SKUs, and weekly consolidated deliveries across all three plants.',
+    client: 'The Majestic Hotel',
+    industry: 'Hospitality',
+    title: 'Heritage Lobby & Dining Room Restoration',
+    scope: 'Full furniture fit-out for a 5-star colonial heritage hotel restoration. 120 dining chairs, 20 tables, bespoke reception desk, and lounge seating across lobby and 3 dining spaces.',
+    approach: 'Sourced period-appropriate solid mahogany and teak, hand-finished to match the hotel\'s 1930s architectural character. All joinery details referenced original archive photographs.',
     results: [
-      { label: 'Cost Reduction', value: '31%' },
-      { label: 'Stockout incidents', value: '0' },
-      { label: 'Order processing time', value: '−65%' },
+      { label: 'Pieces crafted', value: '340+' },
+      { label: 'Lead time', value: '14 wks' },
+      { label: 'Design revisions', value: '0' },
     ],
-    icon: TrendingDown,
-    color: 'bg-blue-50',
-    accent: 'text-blue-600',
+    color: 'bg-amber-50',
+    accent: 'text-amber-700',
   },
   {
     id: '2',
-    client: 'SunMart Retail Group',
-    industry: 'Retail',
-    title: 'Nationwide Packaging Standardization for 47 Outlets',
-    challenge:
-      'Each outlet sourced packaging independently, creating inconsistency in brand presentation and escalating per-unit costs.',
-    solution:
-      'Designed a custom branded packaging suite and set up a hub-and-spoke delivery model from our central warehouse to all 47 locations.',
+    client: 'Nona\'s Kitchen Group',
+    industry: 'F&B',
+    title: 'Custom Dining Furniture for 8-Outlet Restaurant Chain',
+    scope: 'Standardised dining set across 8 outlets — solid rubber wood tables, rattan-back chairs, and reclaimed wood wall panelling for a warm, rustic dining atmosphere.',
+    approach: 'Developed a modular furniture system that fits varying floor plans across all outlets while maintaining a consistent brand identity. Production batched to reduce per-unit cost by 34%.',
     results: [
-      { label: 'Brand consistency', value: '100%' },
-      { label: 'Per-unit cost saving', value: '28%' },
-      { label: 'Supplier reduction', value: '12 → 1' },
+      { label: 'Outlets furnished', value: '8' },
+      { label: 'Cost saving vs. retail', value: '34%' },
+      { label: 'Delivery on schedule', value: '100%' },
     ],
-    icon: Package,
     color: 'bg-orange-50',
-    accent: 'text-orange-600',
+    accent: 'text-orange-700',
   },
   {
     id: '3',
-    client: 'BuildRight Construction',
-    industry: 'Construction',
-    title: 'Site Safety Compliance Across 8 Active Projects',
-    challenge:
-      'Failed DOSH audits due to inconsistent PPE supply and missing safety documentation across project sites.',
-    solution:
-      'Supplied SIRIM and DOSH-certified safety equipment with full documentation, monthly replenishment schedules, and on-site safety audits.',
+    client: 'Alila Villas Resort',
+    industry: 'Hospitality',
+    title: 'Grade A Teak Outdoor Furniture for 50 Private Villas',
+    scope: 'Supply of outdoor loungers, dining sets, and daybeds in Grade A teak for 50 private pool villas. All pieces built to withstand tropical climate and poolside conditions.',
+    approach: 'Specified kiln-dried Grade A teak with stainless steel hardware throughout. Supplied with a 10-year structural warranty and annual oiling service agreement.',
     results: [
-      { label: 'Audit pass rate', value: '100%' },
-      { label: 'PPE compliance', value: '98%' },
-      { label: 'Incident reduction', value: '40%' },
+      { label: 'Villas furnished', value: '50' },
+      { label: 'Pieces delivered', value: '600+' },
+      { label: 'Warranty period', value: '10 yrs' },
     ],
-    icon: ShieldCheck,
-    color: 'bg-yellow-50',
-    accent: 'text-yellow-600',
+    color: 'bg-green-50',
+    accent: 'text-green-700',
   },
   {
     id: '4',
-    client: 'FreshBev F&B',
-    industry: 'Food & Beverage',
-    title: 'Cold-Chain Packaging Solution for Export Market',
-    challenge:
-      'Perishable products were failing overseas inspection due to inadequate insulated packaging for 36-hour transit.',
-    solution:
-      'Engineered a custom EPS + PCM (phase change material) packaging system tested to maintain 4°C for 48 hours. Passed export certification on first attempt.',
+    client: 'TowerOne Corporate HQ',
+    industry: 'Corporate',
+    title: 'Executive Office Furniture for 12-Floor Headquarters',
+    scope: 'Bespoke solid walnut executive desks, meeting tables, and credenzas for C-suite and meeting rooms across a 12-floor corporate headquarters in KL City Centre.',
+    approach: 'Collaborated with the interior designer on custom dimensions and integrated cable management systems. All pieces hand-finished in a matching espresso walnut stain.',
     results: [
-      { label: 'Export rejection rate', value: '0%' },
-      { label: 'Transit temp accuracy', value: '±0.5°C' },
-      { label: 'New export markets', value: '4' },
+      { label: 'Floors furnished', value: '12' },
+      { label: 'Bespoke pieces', value: '180+' },
+      { label: 'Install time', value: '3 days' },
     ],
-    icon: Package,
-    color: 'bg-green-50',
-    accent: 'text-green-600',
+    color: 'bg-slate-50',
+    accent: 'text-slate-700',
   },
   {
     id: '5',
-    client: 'KL Medical Centre',
-    industry: 'Healthcare',
-    title: 'Critical Supply Chain for Clinical Consumables',
-    challenge:
-      'Unpredictable lead times from existing suppliers caused last-minute procurement at premium prices for clinical operations.',
-    solution:
-      'Established a managed inventory program with guaranteed 48-hour emergency delivery and dedicated clinical procurement advisor.',
+    client: 'Atas Boutique Hotel',
+    industry: 'Hospitality',
+    title: 'Full Room Furniture Package for 40-Room Boutique Hotel',
+    scope: 'Complete bedroom furniture package for a 40-room boutique hotel — bed frames, nightstands, wardrobes, writing desks, and luggage racks — all in solid rubber wood with a whitewashed finish.',
+    approach: 'Designed a cohesive furniture collection exclusive to the property. Flat-pack assembly format enabled installation by the hotel\'s own team within a tight pre-opening schedule.',
     results: [
-      { label: 'Emergency orders', value: '−88%' },
-      { label: 'Cost per item avg.', value: '−19%' },
-      { label: 'Delivery SLA met', value: '99.6%' },
+      { label: 'Rooms furnished', value: '40' },
+      { label: 'Pieces supplied', value: '280+' },
+      { label: 'Pre-opening delivered', value: '✓' },
     ],
-    icon: Clock,
-    color: 'bg-red-50',
-    accent: 'text-red-600',
+    color: 'bg-rose-50',
+    accent: 'text-rose-700',
   },
   {
     id: '6',
-    client: 'PrimeStay Hotels',
-    industry: 'Hospitality',
-    title: 'End-to-End Housekeeping Supply Management for 12 Properties',
-    challenge:
-      'Housekeeping costs were 34% above industry benchmark due to wastage, theft, and untracked consumption across properties.',
-    solution:
-      'Implemented a RFID-tracked dispensing system for cleaning chemicals and linens, with monthly consumption analytics per property.',
+    client: 'Arkitek Studio',
+    industry: 'Interior Design',
+    title: 'Ongoing Trade Supply for Architecture & Design Practice',
+    scope: 'Preferred trade supplier to a leading KL architecture firm — supplying custom and standard timber furniture for residential and commercial projects on an ongoing basis.',
+    approach: 'Dedicated account manager, priority production scheduling, and 30-day trade payment terms. Sample room with 40+ finishes available for client presentations.',
     results: [
-      { label: 'Housekeeping cost', value: '−27%' },
-      { label: 'Chemical wastage', value: '−55%' },
-      { label: 'Guest satisfaction', value: '+12pts' },
+      { label: 'Projects supplied', value: '35+' },
+      { label: 'Trade discount', value: '25%' },
+      { label: 'Partnership since', value: '2018' },
     ],
-    icon: TrendingDown,
     color: 'bg-purple-50',
-    accent: 'text-purple-600',
+    accent: 'text-purple-700',
   },
 ]
 
@@ -132,39 +113,29 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen pt-24">
       {/* Header */}
-      <section className="bg-secondary/30 py-12">
+      <section className="bg-secondary/50 py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <ChevronRight className="size-3" />
-              <span className="text-foreground">Projects</span>
-            </div>
-            <h1 className="text-4xl font-bold">Our Work</h1>
-            <p className="mt-2 text-lg text-muted-foreground max-w-2xl">
-              Real results for real businesses. See how go2go has helped companies across
-              industries reduce costs, improve compliance, and streamline their supply chains.
-            </p>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+            <ChevronRight className="size-3" />
+            <span className="text-foreground">Projects</span>
           </div>
-
-          {/* Industry filter pills */}
+          <h1 className="text-4xl font-bold">Our Work</h1>
+          <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
+            From boutique hotels to corporate headquarters — a selection of projects where
+            go2go woodcraft brought spaces to life.
+          </p>
           <div className="mt-8 flex flex-wrap gap-2">
-            {['All Industries', 'Manufacturing', 'Retail', 'Construction', 'F&B', 'Healthcare', 'Hospitality'].map(
-              (ind) => (
-                <span
-                  key={ind}
-                  className="rounded-full border bg-background px-4 py-1.5 text-sm text-muted-foreground cursor-default">
-                  {ind}
-                </span>
-              )
-            )}
+            {['All', 'Hospitality', 'F&B', 'Corporate', 'Interior Design'].map((ind) => (
+              <span key={ind} className="rounded-full border bg-background px-4 py-1.5 text-sm text-muted-foreground">
+                {ind}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Projects grid */}
+      {/* Projects */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -176,19 +147,20 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-secondary/20">
+      <section className="py-16 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 text-center">
-          <h2 className="text-3xl font-bold">Let&apos;s Build Your Success Story</h2>
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">Work With Us</p>
+          <h2 className="mt-3 text-3xl font-bold">Your Project, Our Craft</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Every business has unique procurement challenges. Tell us yours — we&apos;ll design a
-            solution that delivers measurable results.
+            Every great interior starts with the right furniture partner. Share your brief
+            and let us show you what go2go can create for your next project.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg">
-              <Link href="/quotation">Start a Conversation</Link>
+              <Link href="/quotation">Start a Project</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/catalog">View Products</Link>
+              <Link href="/catalog">Browse Collections</Link>
             </Button>
           </div>
         </div>
@@ -198,47 +170,30 @@ export default function ProjectsPage() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const Icon = project.icon
   return (
     <div className="flex flex-col rounded-xl border bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-      <div className={`flex items-center gap-4 p-6 ${project.color}`}>
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/80 shadow-sm">
-          <Icon className={`size-6 ${project.accent}`} />
-        </div>
-        <div className="min-w-0">
-          <Badge variant="outline" className="mb-1 text-xs">
-            {project.industry}
-          </Badge>
-          <p className="text-xs font-semibold text-muted-foreground">{project.client}</p>
-        </div>
+      <div className={`p-6 ${project.color}`}>
+        <Badge variant="outline" className="mb-2 text-xs">{project.industry}</Badge>
+        <p className="text-xs font-semibold text-muted-foreground">{project.client}</p>
+        <h3 className="mt-1 text-lg font-bold leading-snug">{project.title}</h3>
       </div>
 
       <div className="flex flex-col flex-1 p-6">
-        <h3 className="text-lg font-semibold leading-snug">{project.title}</h3>
-
-        <div className="mt-4 space-y-3">
+        <div className="space-y-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Challenge
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-              {project.challenge}
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Scope</p>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{project.scope}</p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Solution
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-              {project.solution}
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Approach</p>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{project.approach}</p>
           </div>
         </div>
 
         <div className="mt-6 grid grid-cols-3 gap-3 border-t pt-6">
           {project.results.map((result) => (
             <div key={result.label} className="text-center">
-              <div className={`text-xl font-bold ${project.accent}`}>{result.value}</div>
+              <div className={`text-xl font-bold ${project.accent}`} style={{ fontFamily: 'var(--font-playfair), serif' }}>{result.value}</div>
               <div className="mt-0.5 text-xs text-muted-foreground leading-tight">{result.label}</div>
             </div>
           ))}
