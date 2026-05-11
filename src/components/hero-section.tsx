@@ -25,9 +25,7 @@ export function HeroSection() {
         </div>
 
         {/* Content — bottom left */}
-        <div className="relative z-10 flex-1 flex flex-col justify-end pb-12 w-full">
-          <div className="mx-auto max-w-7xl w-full px-6 lg:px-12">
-          <div className="max-w-2xl">
+        <div className="relative z-10 flex-1 flex flex-col justify-end px-8 pb-12 max-w-2xl">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm mb-5 w-fit">
             <span className="text-white/90 text-xs font-light tracking-wide">✦ Trusted by 150+ designers & hospitality brands</span>
           </div>
@@ -59,8 +57,6 @@ export function HeroSection() {
             >
               Request a Quote
             </Link>
-          </div>
-          </div>
           </div>
         </div>
       </section>
