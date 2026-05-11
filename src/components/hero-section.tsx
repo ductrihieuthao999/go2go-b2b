@@ -140,23 +140,25 @@ export function HeroSection() {
               furniture your clients will treasure for decades.
             </p>
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <div
-                  key={feature.title}
-                  className="rounded-xl border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="size-5 text-primary" />
+          <div className="mt-16">
+            <InfiniteSlider gap={24} duration={40} durationOnHover={80}>
+              {features.map((feature) => {
+                const Icon = feature.icon
+                return (
+                  <div
+                    key={feature.title}
+                    className="w-72 shrink-0 rounded-xl border bg-card p-6 shadow-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <Icon className="size-5 text-primary" />
+                    </div>
+                    <h3 className="mt-4 font-semibold text-base">{feature.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="mt-4 font-semibold text-base">{feature.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </InfiniteSlider>
           </div>
         </div>
       </section>
@@ -203,6 +205,36 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">The People Behind the Craft</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Meet the Team</h2>
+          </div>
+          <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4">
+            {[
+              { name: 'Tri Nguyen', role: 'CEO & Founder', img: '/members/tri.png' },
+              { name: 'Hue Luong', role: 'Head of Ops & Finance', img: '/members/hue.png' },
+              { name: 'Marco Dao', role: 'Head of Marketing', img: '/members/nghia.png' },
+              { name: 'Nhat Nguyen', role: 'Lead Interior Designer', img: '/members/nhat.png' },
+            ].map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-border bg-secondary">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <h3 className="mt-4 font-semibold">{member.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

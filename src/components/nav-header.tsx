@@ -20,6 +20,8 @@ export function NavHeader() {
   const [scrolled, setScrolled] = React.useState(false)
   const { scrollYProgress } = useScroll()
   const pathname = usePathname()
+  const isHome = pathname === '/'
+  const effectiveScrolled = scrolled || !isHome
 
   React.useEffect(() => {
     const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -38,7 +40,7 @@ export function NavHeader() {
         data-state={menuState ? 'active' : undefined}
         className={cn(
           'group fixed z-20 w-full transition-all duration-300',
-          scrolled
+          effectiveScrolled
             ? 'bg-background/95 backdrop-blur-md border-b border-border/60 shadow-sm'
             : 'bg-transparent'
         )}>
@@ -46,11 +48,11 @@ export function NavHeader() {
           <motion.div
             className={cn(
               'relative flex flex-wrap items-center justify-between gap-6 duration-200 lg:gap-0',
-              scrolled ? 'py-4' : 'py-6'
+              effectiveScrolled ? 'py-4' : 'py-6'
             )}>
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link href="/" aria-label="go2go home">
-                <Go2GoLogo scrolled={scrolled} />
+                <Go2GoLogo scrolled={effectiveScrolled} />
               </Link>
 
               <button
@@ -58,7 +60,7 @@ export function NavHeader() {
                 aria-label={menuState ? 'Close Menu' : 'Open Menu'}
                 className={cn(
                   'relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden',
-                  scrolled ? 'text-foreground' : 'text-white'
+                  effectiveScrolled ? 'text-foreground' : 'text-white'
                 )}>
                 <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                 <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
@@ -73,7 +75,7 @@ export function NavHeader() {
                         className={cn(
                           'block duration-150 hover:opacity-100',
                           pathname === item.href ? 'opacity-100 font-semibold' : 'opacity-70',
-                          scrolled ? 'text-foreground' : 'text-white'
+                          effectiveScrolled ? 'text-foreground' : 'text-white'
                         )}>
                         {item.name}
                       </Link>
@@ -102,7 +104,7 @@ export function NavHeader() {
                   size="sm"
                   className={cn(
                     'rounded-full border font-semibold transition-all',
-                    !scrolled && 'border-white/50 text-white bg-transparent hover:bg-white/10 lg:flex hidden'
+                    !effectiveScrolled && 'border-white/50 text-white bg-transparent hover:bg-white/10 lg:flex hidden'
                   )}>
                   <Link href="/login">Login</Link>
                 </Button>
@@ -111,7 +113,7 @@ export function NavHeader() {
                   size="sm"
                   className={cn(
                     'rounded-full font-semibold',
-                    !scrolled && 'bg-white text-primary hover:bg-white/90'
+                    !effectiveScrolled && 'bg-white text-primary hover:bg-white/90'
                   )}>
                   <Link href="/signup">Sign Up</Link>
                 </Button>
