@@ -8,21 +8,13 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { ChevronRight, Hammer, Truck, Ruler, Leaf } from 'lucide-react'
 
 const partnerLogos = [
-  { src: 'https://html.tailus.io/blocks/customers/nvidia.svg', alt: 'Nvidia', h: 'h-5' },
-  { src: 'https://html.tailus.io/blocks/customers/github.svg', alt: 'GitHub', h: 'h-4' },
-  { src: 'https://html.tailus.io/blocks/customers/nike.svg', alt: 'Nike', h: 'h-5' },
-  { src: 'https://html.tailus.io/blocks/customers/openai.svg', alt: 'OpenAI', h: 'h-6' },
-  { src: 'https://html.tailus.io/blocks/customers/laravel.svg', alt: 'Laravel', h: 'h-4' },
-  { src: 'https://html.tailus.io/blocks/customers/lilly.svg', alt: 'Lilly', h: 'h-7' },
-  { src: 'https://html.tailus.io/blocks/customers/lemonsqueezy.svg', alt: 'LemonSqueezy', h: 'h-5' },
-  { src: 'https://html.tailus.io/blocks/customers/column.svg', alt: 'Column', h: 'h-4' },
-]
-
-const stats = [
-  { value: '300+', label: 'Furniture Pieces' },
-  { value: '150+', label: 'Trade Clients' },
-  { value: '20+', label: 'Years Craftsmanship' },
-  { value: '8+', label: 'Wood Species' },
+  { src: '/brands/ikea.svg', alt: 'IKEA', h: 'h-6' },
+  { src: '/brands/marriott.svg', alt: 'Marriott', h: 'h-5' },
+  { src: '/brands/hilton.svg', alt: 'Hilton', h: 'h-5' },
+  { src: '/brands/airbnb.svg', alt: 'Airbnb', h: 'h-5' },
+  { src: '/brands/expedia.svg', alt: 'Expedia', h: 'h-5' },
+  { src: '/brands/booking.svg', alt: 'Booking.com', h: 'h-4' },
+  { src: '/brands/trivago.svg', alt: 'Trivago', h: 'h-4' },
 ]
 
 const features = [
@@ -134,20 +126,6 @@ export function HeroSection() {
               <ProgressiveBlur className="pointer-events-none absolute left-0 top-0 h-full w-20" direction="left" blurIntensity={1} />
               <ProgressiveBlur className="pointer-events-none absolute right-0 top-0 h-full w-20" direction="right" blurIntensity={1} />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-secondary/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl font-bold text-primary" style={{ fontFamily: 'var(--font-playfair), serif' }}>{stat.value}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -104,7 +104,7 @@ export function NavHeader() {
                     'rounded-full border font-semibold transition-all',
                     !scrolled && 'border-white/50 text-white bg-transparent hover:bg-white/10 lg:flex hidden'
                   )}>
-                  <Link href="/catalog">View Collections</Link>
+                  <Link href="/login">Login</Link>
                 </Button>
                 <Button
                   asChild
@@ -113,7 +113,7 @@ export function NavHeader() {
                     'rounded-full font-semibold',
                     !scrolled && 'bg-white text-primary hover:bg-white/90'
                   )}>
-                  <Link href="/quotation">Request Quote</Link>
+                  <Link href="/signup">Sign Up</Link>
                 </Button>
               </div>
             </div>

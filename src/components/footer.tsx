@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Go2GoLogo } from '@/components/nav-header'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest } from 'react-icons/fa'
 
 const collectionLinks = [
   { name: 'Dining Furniture', href: '/catalog?category=dining' },
@@ -19,6 +19,13 @@ const companyLinks = [
   { name: 'Trade Programme', href: '/quotation' },
 ]
 
+const socialLinks = [
+  { icon: FaFacebook, href: '#', label: 'Facebook' },
+  { icon: FaInstagram, href: '#', label: 'Instagram' },
+  { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+  { icon: FaPinterest, href: '#', label: 'Pinterest' },
+]
+
 export function Footer() {
   return (
     <footer className="border-t bg-background">
@@ -30,23 +37,16 @@ export function Footer() {
               Artisan wooden furniture and woodcraft for trade. Supplying interior designers,
               architects, and hospitality businesses since 2004.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Mail className="size-4 shrink-0" />
-                <a href="mailto:trade@go2go.com" className="hover:text-foreground transition-colors">
-                  trade@go2go.com
+            <div className="mt-6 flex gap-4">
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Icon className="size-5" />
                 </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="size-4 shrink-0" />
-                <a href="tel:+60312345678" className="hover:text-foreground transition-colors">
-                  +603 1234 5678
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="size-4 shrink-0 mt-0.5" />
-                <span>Kuala Lumpur, Malaysia</span>
-              </div>
+              ))}
             </div>
           </div>
 
