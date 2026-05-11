@@ -47,7 +47,7 @@ export function NavHeader() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <motion.div
             className={cn(
-              'flex items-center justify-between transition-all duration-200',
+              'w-full flex items-center justify-between transition-all duration-200',
               effectiveScrolled ? 'py-4' : 'py-6'
             )}
           >
