@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 42 25% 97%;
-    --foreground: 20 55% 12%;
-    --card: 42 25% 97%;
-    --card-foreground: 20 55% 12%;
-    --popover: 42 25% 97%;
-    --popover-foreground: 20 55% 12%;
-    --primary: 22 55% 25%;
-    --primary-foreground: 42 30% 95%;
-    --secondary: 38 20% 93%;
-    --secondary-foreground: 20 55% 12%;
-    --muted: 38 15% 90%;
+    --background: 38 35% 95%;
+    --foreground: 25 38% 18%;
+    --card: 38 35% 95%;
+    --card-foreground: 25 38% 18%;
+    --popover: 38 35% 95%;
+    --popover-foreground: 25 38% 18%;
+    --primary: 25 38% 18%;
+    --primary-foreground: 38 30% 95%;
+    --secondary: 38 25% 90%;
+    --secondary-foreground: 25 38% 18%;
+    --muted: 38 20% 87%;
     --muted-foreground: 25 15% 48%;
-    --accent: 35 65% 48%;
+    --accent: 36 47% 59%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 38 20% 86%;
-    --input: 38 20% 86%;
-    --ring: 22 55% 25%;
-    --radius: 0.375rem;
+    --border: 36 20% 84%;
+    --input: 36 20% 84%;
+    --ring: 25 38% 18%;
+    --radius: 0.25rem;
   }
 
   .dark {
-    --background: 20 30% 8%;
-    --foreground: 42 25% 93%;
-    --card: 20 28% 11%;
-    --card-foreground: 42 25% 93%;
-    --popover: 20 28% 11%;
-    --popover-foreground: 42 25% 93%;
-    --primary: 35 65% 52%;
-    --primary-foreground: 20 55% 10%;
-    --secondary: 20 20% 16%;
-    --secondary-foreground: 42 25% 93%;
-    --muted: 20 20% 16%;
-    --muted-foreground: 38 15% 60%;
-    --accent: 35 65% 52%;
-    --accent-foreground: 20 55% 10%;
+    --background: 25 30% 8%;
+    --foreground: 38 25% 93%;
+    --card: 25 28% 11%;
+    --card-foreground: 38 25% 93%;
+    --popover: 25 28% 11%;
+    --popover-foreground: 38 25% 93%;
+    --primary: 36 47% 59%;
+    --primary-foreground: 25 38% 10%;
+    --secondary: 25 20% 16%;
+    --secondary-foreground: 38 25% 93%;
+    --muted: 25 20% 16%;
+    --muted-foreground: 36 15% 60%;
+    --accent: 36 47% 59%;
+    --accent-foreground: 25 38% 10%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 42 25% 93%;
-    --border: 20 20% 18%;
-    --input: 20 20% 18%;
-    --ring: 35 65% 52%;
+    --destructive-foreground: 38 25% 93%;
+    --border: 25 20% 18%;
+    --input: 25 20% 18%;
+    --ring: 36 47% 59%;
   }
 }
 
@@ -58,9 +58,9 @@
     font-family: var(--font-jakarta), sans-serif;
   }
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-jakarta), sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: var(--font-cormorant), serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
   }
 }
 

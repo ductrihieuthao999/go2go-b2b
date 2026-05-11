@@ -109,27 +109,25 @@ export default function QuotationPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen pt-24 flex items-center justify-center px-6">
+      <div className="min-h-screen pt-36 flex items-center justify-center px-6 bg-[#F8F4EE]">
         <div className="max-w-md text-center">
-          <div className="flex justify-center">
-            <CheckCircle2 className="size-16 text-green-500" />
-          </div>
-          <h1 className="mt-6 text-3xl font-bold">Quote Request Received!</h1>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Thank you for reaching out. Our procurement team will review your requirements and
+          <CheckCircle2 className="size-14 text-[#C9A66B] mx-auto mb-6" />
+          <h1 className="text-4xl font-light text-[#3E2C1C] mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
+            Quote Request Received
+          </h1>
+          <p className="text-sm text-[#3E2C1C]/60 leading-relaxed mb-2">
+            Thank you for reaching out. Our team will review your requirements and
             send you a detailed quote within{' '}
-            <span className="font-semibold text-foreground">24 business hours</span>.
+            <span className="font-medium text-[#3E2C1C]">24 business hours</span>.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Check your inbox — a confirmation has been sent to your email.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button asChild>
-              <Link href="/catalog">Continue Browsing</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/">Back to Home</Link>
-            </Button>
+          <p className="text-xs text-[#3E2C1C]/40 mb-10">A confirmation has been sent to your email.</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Link href="/catalog" className="px-8 py-3 rounded-full bg-[#3E2C1C] text-white text-xs tracking-widest uppercase hover:bg-[#3E2C1C]/90 transition-colors">
+              Continue Browsing
+            </Link>
+            <Link href="/" className="px-8 py-3 rounded-full border border-[#3E2C1C]/30 text-[#3E2C1C] text-xs tracking-widest uppercase hover:bg-[#3E2C1C]/5 transition-colors">
+              Back to Home
+            </Link>
           </div>
         </div>
       </div>
@@ -137,27 +135,20 @@ export default function QuotationPage() {
   }
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen bg-[#F8F4EE]">
       {/* Header */}
-      <section className="bg-secondary/30 py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <ChevronRight className="size-3" />
-              <span className="text-foreground">Request a Quote</span>
-            </div>
-            <h1 className="text-4xl font-bold">Request a Quote</h1>
-            <p className="mt-2 text-lg text-muted-foreground max-w-2xl">
-              Fill in your requirements and we&apos;ll get back to you with a competitive, itemised
-              quote within 24 hours.
-            </p>
-          </div>
+      <div className="bg-[#3E2C1C] text-white pt-36 pb-16 px-6">
+        <div className="max-w-7xl mx-auto lg:px-6">
+          <p className="text-[#C9A66B] text-[10px] tracking-[0.3em] uppercase mb-4">Trade Enquiries</p>
+          <h1 className="text-5xl font-light leading-tight mb-4" style={{ fontFamily: 'var(--font-cormorant)' }}>
+            Request a Quote
+          </h1>
+          <p className="text-sm text-white/60 max-w-2xl leading-relaxed">
+            Fill in your requirements and we&apos;ll get back to you with a competitive, itemised
+            quote within 24 hours.
+          </p>
         </div>
-      </section>
-
+      </div>
       <section className="py-12">
         <div className="mx-auto max-w-4xl px-6 lg:px-12">
           {/* Progress indicator */}
@@ -167,13 +158,13 @@ export default function QuotationPage() {
               return (
                 <React.Fragment key={section.id}>
                   <div className="flex flex-col items-center gap-1.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <div className="flex h-9 w-9 items-center justify-center bg-[#3E2C1C]/8 text-[#3E2C1C]">
                       <Icon className="size-4" />
                     </div>
-                    <span className="text-xs text-muted-foreground text-center">{section.label}</span>
+                    <span className="text-[10px] text-[#3E2C1C]/50 text-center tracking-wide">{section.label}</span>
                   </div>
                   {i < sections.length - 1 && (
-                    <div className="h-px flex-1 bg-border mx-2 mt-[-14px]" />
+                    <div className="h-px flex-1 bg-[#3E2C1C]/10 mx-2 mt-[-14px]" />
                   )}
                 </React.Fragment>
               )
@@ -343,25 +334,28 @@ export default function QuotationPage() {
             </FormSection>
 
             {/* Disclaimer */}
-            <div className="rounded-lg border bg-secondary/40 p-4 text-sm text-muted-foreground">
-              By submitting this form, you agree to be contacted by go2go B2B regarding your
-              quote request. Your information will be handled in accordance with our Privacy
-              Policy and will not be shared with third parties.
+            <div className="border border-[#3E2C1C]/10 bg-[#3E2C1C]/3 p-4 text-xs text-[#3E2C1C]/50 leading-relaxed">
+              By submitting this form, you agree to be contacted by go2go regarding your quote request.
+              Your information will be handled in accordance with our Privacy Policy and will not be shared with third parties.
             </div>
 
             {/* Submit */}
             {submitError && (
-              <div className="rounded-lg border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+              <div className="border border-red-200 bg-red-50 p-4 text-sm text-red-600">
                 {submitError}
               </div>
             )}
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-end">
-              <p className="text-sm text-muted-foreground">
-                We&apos;ll respond within <span className="font-semibold text-foreground">24 hours</span>
+              <p className="text-xs text-[#3E2C1C]/40">
+                We&apos;ll respond within <span className="font-medium text-[#3E2C1C]">24 hours</span>
               </p>
-              <Button type="submit" size="lg" disabled={isSubmitting} className="min-w-48">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-10 py-3 bg-[#3E2C1C] text-white text-xs tracking-widest uppercase hover:bg-[#3E2C1C]/90 transition-colors disabled:opacity-50 min-w-48"
+              >
                 {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
-              </Button>
+              </button>
             </div>
           </form>
         </div>
@@ -382,14 +376,19 @@ function FormSection({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-xl border bg-card p-6 shadow-sm">
+    <div className="border border-[#3E2C1C]/10 bg-white p-6">
       <div className="flex items-center gap-3 mb-6">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+        <div className="flex h-7 w-7 items-center justify-center bg-[#3E2C1C] text-white text-xs font-light">
           {number}
         </div>
         <div className="flex items-center gap-2">
-          <Icon className="size-4 text-muted-foreground" />
-          <h2 className="font-semibold text-lg">{title}</h2>
+          <Icon className="size-4 text-[#3E2C1C]/40" />
+          <h2
+            className="text-xl font-light text-[#3E2C1C]"
+            style={{ fontFamily: 'var(--font-cormorant)' }}
+          >
+            {title}
+          </h2>
         </div>
       </div>
       {children}
@@ -410,12 +409,12 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label>
+      <Label className="text-xs tracking-wide text-[#3E2C1C]/70">
         {label}
-        {required && <span className="ml-1 text-destructive">*</span>}
+        {required && <span className="ml-1 text-red-400">*</span>}
       </Label>
       {children}
-      {error && <p className="text-xs text-destructive">{error}</p>}
+      {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   )
 }
