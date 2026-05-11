@@ -108,7 +108,7 @@ export function HeroSection() {
               <p className="text-end text-sm text-muted-foreground">Supplying leading brands</p>
             </div>
             <div className="relative py-6 md:w-[calc(100%-11rem)]">
-              <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+              <InfiniteSlider durationOnHover={80} duration={40} gap={112}>
                 {partnerLogos.map((logo) => (
                   <div key={logo.alt} className="flex">
                     <img
