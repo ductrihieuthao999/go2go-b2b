@@ -47,7 +47,7 @@ export function NavHeader() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <motion.div
             className={cn(
-              'w-full flex items-center justify-between transition-all duration-200',
+              'w-full grid grid-cols-[auto_1fr_auto] items-center transition-all duration-200',
               effectiveScrolled ? 'py-4' : 'py-6'
             )}
           >
@@ -80,7 +80,7 @@ export function NavHeader() {
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center justify-center gap-1">
               {menuItems.map((item) => (
                 <Link
                   key={item.href}
@@ -102,7 +102,7 @@ export function NavHeader() {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-end gap-3">
               <Link
                 href="/signup"
                 className={cn(
