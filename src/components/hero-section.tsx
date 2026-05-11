@@ -4,18 +4,8 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
-import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { ChevronRight, Hammer, Truck, Ruler, Leaf } from 'lucide-react'
 
-const partnerLogos = [
-  { src: '/brands/ikea.svg', alt: 'IKEA', h: 'h-6' },
-  { src: '/brands/marriott.svg', alt: 'Marriott', h: 'h-5' },
-  { src: '/brands/hilton.svg', alt: 'Hilton', h: 'h-5' },
-  { src: '/brands/airbnb.svg', alt: 'Airbnb', h: 'h-5' },
-  { src: '/brands/expedia.svg', alt: 'Expedia', h: 'h-5' },
-  { src: '/brands/booking.svg', alt: 'Booking.com', h: 'h-4' },
-  { src: '/brands/trivago.svg', alt: 'Trivago', h: 'h-4' },
-]
 
 const features = [
   {
@@ -100,35 +90,6 @@ export function HeroSection() {
         </div>
       </section>
 
-      {/* Trade clients slider */}
-      <section className="bg-background pb-2">
-        <div className="group relative mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-center md:flex-row">
-            <div className="md:max-w-44 md:border-r md:pr-6">
-              <p className="text-end text-sm text-muted-foreground">Supplying leading brands</p>
-            </div>
-            <div className="relative py-6 md:w-[calc(100%-11rem)]">
-              <InfiniteSlider durationOnHover={80} duration={40} gap={112}>
-                {partnerLogos.map((logo) => (
-                  <div key={logo.alt} className="flex">
-                    <img
-                      className={`mx-auto ${logo.h} w-fit opacity-50 dark:invert`}
-                      src={logo.src}
-                      alt={logo.alt}
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-                ))}
-              </InfiniteSlider>
-              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background" />
-              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background" />
-              <ProgressiveBlur className="pointer-events-none absolute left-0 top-0 h-full w-20" direction="left" blurIntensity={1} />
-              <ProgressiveBlur className="pointer-events-none absolute right-0 top-0 h-full w-20" direction="right" blurIntensity={1} />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Features */}
       <section id="solutions" className="py-24">
@@ -205,36 +166,6 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">The People Behind the Craft</p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Meet the Team</h2>
-          </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {[
-              { name: 'Tri Nguyen', role: 'CEO & Founder', img: '/members/tri.png' },
-              { name: 'Hue Luong', role: 'Head of Ops & Finance', img: '/members/hue.png' },
-              { name: 'Marco Dao', role: 'Head of Marketing', img: '/members/nghia.png' },
-              { name: 'Nhat Nguyen', role: 'Lead Interior Designer', img: '/members/nhat.png' },
-            ].map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-2 border-border bg-secondary">
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
-                <h3 className="mt-4 font-semibold">{member.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -12,7 +12,7 @@ const menuItems = [
   { name: 'Collections', href: '/catalog' },
   { name: 'Projects', href: '/projects' },
   { name: 'Custom Orders', href: '/quotation' },
-  { name: 'About', href: '/#about' },
+  { name: 'About', href: '/about' },
 ]
 
 export function NavHeader() {
