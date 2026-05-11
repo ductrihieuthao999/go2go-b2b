@@ -25,7 +25,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Go2GoLogo />
+            <Go2GoLogo scrolled={true} />
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
               Artisan wooden furniture and woodcraft for trade. Supplying interior designers,
               architects, and hospitality businesses since 2004.

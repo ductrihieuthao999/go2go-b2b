@@ -57,7 +57,7 @@ export function HeroSection() {
     <main className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative">
-        <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
+        <div className="py-32 md:pb-40 lg:pb-48 lg:pt-80">
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
@@ -93,7 +93,7 @@ export function HeroSection() {
           </div>
 
           {/* Hero video */}
-          <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl sm:aspect-video lg:rounded-[3rem]">
+          <div className="aspect-[2/3] absolute inset-0 overflow-hidden sm:aspect-video">
             <video
               autoPlay
               loop
